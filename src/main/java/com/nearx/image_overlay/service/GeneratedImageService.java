@@ -1,6 +1,7 @@
 package com.nearx.image_overlay.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public class GeneratedImageService {
     }
 
     public GeneratedImage saveGeneratedImage(byte[] imageData, String name, String course) {
-        List<GeneratedImage> existingRecords = repository.findByNameOrCourse(name, course);
+        Optional<GeneratedImage> existingRecords = repository.findByNameAndCourse(name, course);
 
         // Verifica se algum registro já tem exatamente o mesmo name e course
         boolean alreadyExists = existingRecords.stream()

@@ -1,12 +1,10 @@
 package com.nearx.image_overlay.repository;
 
-import java.util.List;
-
+import com.nearx.image_overlay.model.GeneratedImage;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.nearx.image_overlay.model.GeneratedImage;
+import java.util.Optional;
 
 public interface GeneratedImageRepository extends JpaRepository<GeneratedImage, Long> {
-    List<GeneratedImage> findByNameOrCourse(String name, String course);
-
+    Optional<GeneratedImage> findByNameAndCourse(String name, String course);
 }
