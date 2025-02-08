@@ -123,7 +123,7 @@ public class ImageController {
             ImageIO.write(image, "png", baos);
             byte[] imageBytes = baos.toByteArray();
 
-            GeneratedImage savedImage = imageRepository.save(new GeneratedImage(imageBytes));
+            GeneratedImage savedImage = imageRepository.save(new GeneratedImage(imageBytes, name, course));
 
             HttpHeaders headers = new HttpHeaders();
             headers.add("Content-Type", "image/png");

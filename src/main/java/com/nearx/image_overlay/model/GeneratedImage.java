@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "generated_images")
+@Table(name = "certificate")
 public class GeneratedImage {
 
     @Id
@@ -15,6 +15,12 @@ public class GeneratedImage {
     @Column(name = "image_data", nullable = false)
     private byte[] imageData;
 
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "course", nullable = false)
+    private String course;
+
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
@@ -22,14 +28,18 @@ public class GeneratedImage {
     public GeneratedImage() {
     }
 
-    public GeneratedImage(byte[] imageData) {
+    public GeneratedImage(byte[] imageData, String name, String course) {
         this.imageData = imageData;
+        this.name = name;
+        this.course = course;
         this.createdAt = LocalDateTime.now();
     }
 
-    public GeneratedImage(Long id, byte[] imageData, LocalDateTime createdAt) {
+    public GeneratedImage(Long id, byte[] imageData, String name, String course, LocalDateTime createdAt) {
         this.id = id;
         this.imageData = imageData;
+        this.name = name;
+        this.course = course;
         this.createdAt = createdAt;
     }
 
@@ -48,6 +58,22 @@ public class GeneratedImage {
 
     public void setImageData(byte[] imageData) {
         this.imageData = imageData;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
     }
 
     public LocalDateTime getCreatedAt() {
