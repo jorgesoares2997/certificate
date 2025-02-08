@@ -34,7 +34,8 @@ public class ImageController {
 
     // Injetando o serviço de email
     @Autowired
-    public ImageController(TextService textService, GeneratedImageRepository imageRepository, EmailService emailService) {
+    public ImageController(TextService textService, GeneratedImageRepository imageRepository,
+            EmailService emailService) {
         this.textService = textService;
         this.imageRepository = imageRepository;
         this.emailService = emailService;
@@ -112,7 +113,8 @@ public class ImageController {
             return ResponseEntity.ok("E-mail enviado com sucesso para: " + email);
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao enviar o e-mail: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Erro ao enviar o e-mail: " + e.getMessage());
         }
     }
 
