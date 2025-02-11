@@ -15,7 +15,7 @@ public class TextService {
             return restTemplate.getForObject(API_URL, Map.class);
         } catch (Exception e) {
             e.printStackTrace();
-            return Map.of(); 
+            return Map.of();
         }
     }
 }

@@ -7,7 +7,6 @@ public class ApiResponse {
     private String date;
     private String workload;
 
-    // Getters e Setters
     public String getName() {
         return name;
     }

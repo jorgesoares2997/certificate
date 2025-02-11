@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class ApiService {
 
-    private static final String API_URL = "http://localhost:8080/data"; // URL da sua API
+    private static final String API_URL = "http://localhost:8080/data"; 
 
     private final RestTemplate restTemplate;
 
@@ -23,23 +23,22 @@ public class ApiService {
 
     public List<ApiResponse> getApiData() {
         try {
-            // Fazendo a requisição GET e retornando os dados como uma lista de ApiResponse
             ApiResponse[] responseArray = restTemplate.getForObject(API_URL, ApiResponse[].class);
 
-            // Verifica se o array não é nulo, caso contrário retorna uma lista vazia
+
             if (responseArray != null) {
                 return List.of(responseArray);
             } else {
-                return List.of(); // Retorna uma lista vazia em caso de resposta nula
+                return List.of(); 
             }
         } catch (HttpClientErrorException | HttpServerErrorException e) {
-            // Erros de cliente ou servidor
+
             System.err.println("Erro ao consumir a API: " + e.getMessage());
-            return List.of(); // Retorna uma lista vazia em caso de erro
+            return List.of(); 
         } catch (Exception e) {
-            // Qualquer outro erro genérico
+
             System.err.println("Erro desconhecido: " + e.getMessage());
-            return List.of(); // Retorna uma lista vazia em caso de erro
+            return List.of(); 
         }
     }
 }

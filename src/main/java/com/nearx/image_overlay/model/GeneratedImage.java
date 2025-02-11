@@ -43,7 +43,6 @@ public class GeneratedImage {
         this.createdAt = createdAt;
     }
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -84,5 +83,4 @@ public class GeneratedImage {
         this.createdAt = createdAt;
     }
 
-    // toString, equals e hashCode podem ser implementados aqui também
 }

@@ -7,7 +7,6 @@ public class ImageOverlayRequest {
     private String imageUrl;
     private List<TextOverlay> texts;
 
-    // Construtores
     public ImageOverlayRequest() {
     }
 
@@ -16,7 +15,6 @@ public class ImageOverlayRequest {
         this.texts = texts;
     }
 
-    // Getters e Setters
     public String getImageUrl() {
         return imageUrl;
     }

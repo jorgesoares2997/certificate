@@ -10,7 +10,7 @@ public class TextOverlay {
     private String color;
     private boolean bold;
 
-    // Construtores
+
     public TextOverlay() {
     }
 
@@ -23,7 +23,6 @@ public class TextOverlay {
         this.bold = bold;
     }
 
-    // Getters e Setters
     public String getText() {
         return text;
     }
@@ -72,7 +71,6 @@ public class TextOverlay {
         this.bold = bold;
     }
 
-    // Método getColorAsAWT
     public Color getColorAsAWT() {
         try {
             return Color.decode(color);

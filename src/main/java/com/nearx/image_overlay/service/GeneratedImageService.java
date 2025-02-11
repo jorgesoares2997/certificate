@@ -20,7 +20,7 @@ public class GeneratedImageService {
     public GeneratedImage saveGeneratedImage(byte[] imageData, String name, String course) {
         Optional<GeneratedImage> existingRecords = repository.findByNameAndCourse(name, course);
 
-        // Verifica se algum registro já tem exatamente o mesmo name e course
+
         boolean alreadyExists = existingRecords.stream()
                 .anyMatch(record -> record.getName().equals(name) && record.getCourse().equals(course));
 

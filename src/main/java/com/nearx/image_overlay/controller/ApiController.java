@@ -20,7 +20,6 @@ public class ApiController {
 
     @GetMapping("/api/data")
     public List<ApiResponse> getApiData() {
-        // Chama o serviço para consumir a API e retornar os dados
         return apiService.getApiData();
     }
 }
